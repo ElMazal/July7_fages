@@ -1,4 +1,4 @@
-title: "AGEs"
+title: "N. rachovi_fAGEs"
 author: "Ellen"
 date: "2024-07-07"
 output: html_document
@@ -30,7 +30,7 @@ reduce_ages2
 reduce_ages2 |> group_by(Sex) |> tally()
 reduce_ages2 |> count(Habitat)
 
-
+###Stats
 mean_reduce_ages3 <- reduce_ages |>
   group_by(Sex) |>
   summarize(mean = mean(Mean_RFU),
@@ -49,13 +49,10 @@ mean_reduce_ages5 <- reduce_ages |>
             sd = sd(Mean_RFU))
 mean_reduce_ages5
 
-
-
-
 t.test(Mean_RFU ~ Habitat, data = reduce_ages, var.equal = TRUE)
 t.test(Mean_RFU ~ Sex, data = reduce_ages, var.equal = TRUE)
 
-
+#####
 
 # plot 1
 p <- ggplot(data = reduce_ages, aes(x = tissue, y = Mean_RFU, color = Sex)) + geom_boxplot()
@@ -74,7 +71,7 @@ ggplot(data_liver, aes(x = Habitat, y = Mean_RFU, fill = Habitat)) +
   labs(title = "Boxplot of Mean RFU for Liver",
        x = "Habitat",
        y = "Mean RFU") +
-  theme_minimal()
+  theme(text=element_text(size=15)
 
 
 #add facet wrap ~age
