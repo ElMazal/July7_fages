@@ -27,8 +27,34 @@ reduce_ages2 <- reduce_ages %>%
 
 reduce_ages2
 
+reduce_ages2 |> group_by(Sex) |> tally()
+reduce_ages2 |> count(Habitat)
+
+
+mean_reduce_ages3 <- reduce_ages |>
+  group_by(Sex) |>
+  summarize(mean = mean(Mean_RFU),
+            sd = sd(Mean_RFU))
+mean_reduce_ages3
+
+mean_reduce_ages4 <- reduce_ages |>
+  group_by(Habitat) |>
+  summarize(mean = mean(Mean_RFU),
+            sd = sd(Mean_RFU))
+mean_reduce_ages4
+
+mean_reduce_ages5 <- reduce_ages |>
+  group_by(tissue) |>
+  summarize(mean = mean(Mean_RFU),
+            sd = sd(Mean_RFU))
+mean_reduce_ages5
+
+
+
+
 t.test(Mean_RFU ~ Habitat, data = reduce_ages, var.equal = TRUE)
 t.test(Mean_RFU ~ Sex, data = reduce_ages, var.equal = TRUE)
+
 
 
 # plot 1
