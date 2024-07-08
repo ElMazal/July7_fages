@@ -1,6 +1,6 @@
 title: "AGEs"
 author: "Ellen"
-date: "2023-09-19"
+date: "2024-07-07"
 output: html_document
 
 #load packages
@@ -28,6 +28,7 @@ reduce_ages2 <- reduce_ages %>%
 reduce_ages2
 
 t.test(Mean_RFU ~ Habitat, data = reduce_ages, var.equal = TRUE)
+t.test(Mean_RFU ~ Sex, data = reduce_ages, var.equal = TRUE)
 
 
 # plot 1
